@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #eff0fc;
+  --color-blue: #e0f2ff;
+  --color-orange: #fff0e5;
+  --color-dark-orange: #ff5c00;
+  --color-purple: #f2e5ff;
+  --color-primary-text-color: #2a303c;
+  --color-secondary-text-color: #5a5b6f;
+}
+
+@layer components {
+  .banner-class {
+    @apply bg-[#2176ff] text-white text-center p-4 text-sm;
+  }
+
+  .header-container {
+    @apply bg-white;
+  }
+
+  .header-logo {
+    @apply text-2xl font-semibold italic;
+  }
+
+  .header-links-container {
+    @apply flex items-center gap-5 text-sm font-medium;
+  }
+
+  .header-link {
+    @apply text-primary-text-color hover:text-dark-orange transition-all duration-300 ease-in-out;
+  }
+
+  .sign-up-button {
+    @apply border border-dark-orange text-dark-orange bg-white rounded-md px-3 py-1.5 text-sm hover:text-white hover:bg-gradient-to-r from-[#ffaa04] to-dark-orange hover:border-transparent hover:shadow transition-all duration-300 ease-in-out;
+  }
+
+  .footer-container {
+    @apply bg-[#f6f7fa] pt-10 pb-5;
+  }
+
+  .footer-link {
+    @apply font-medium text-primary-text-color;
+  }
+
+  .nav-container {
+    @apply max-w-[1600px] mx-auto px-5 sm:px-6 lg:px-8 py-4;
+  }
+
+  .custom-container {
+    @apply max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 py-4;
+  }
+
+  .align-center {
+    @apply flex items-center;
+  }
+
+  .space-between {
+    @apply flex items-center justify-between;
+  }
+
+  .center {
+    @apply flex items-center justify-center;
+  }
+
+  .primary-gradient {
+    @apply bg-gradient-to-b from-primary to-white;
+  }
+
+  .hero-tiles {
+    @apply bg-gradient-to-r from-[#ffa567] to-[#ff4330] text-white text-center py-4 font-semibold rounded-lg shadow-lg;
+  }
+
+  .hero-tiles-tiktok {
+    @apply bg-gradient-to-r from-[#4DBBEB] via-[#C387FF] to-[#FF45AA] text-white text-center py-4 font-semibold rounded-lg shadow-lg;
+  }
+}
+/* styles.css or index.css or globals.css */
+@keyframes spinCustom {
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(260deg);
+  }
+}
+
+.spin {
+  animation: spinCustom 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@layer utilities {
+  .pointer {
+    @apply cursor-pointer;
+  }
+
+  .heading {
+    @apply text-5xl font-semibold text-primary-text-color;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #ffaa04, #ff5c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
