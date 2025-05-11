@@ -1,7 +1,7 @@
 // src/App.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Banner, Header, Footer } from "./components/commons";
-import { Home, Login, Signup } from "./pages";
+import { Home, Login, Signup, Checkout, Payment } from "./pages";
 
 export default function App() {
   const bannerTitle = (
@@ -22,6 +22,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />   
           <Route path="/signup" element={<Signup />} />  
+          <Route path="/checkout" element={<Checkout />} /> 
+          <Route path="/payment" element={<Payment />} />
           <Route path="*" element={<div className="text-center py-20">404 Not Found</div>} />
         </Routes>
       </main>
