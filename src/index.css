@@ -107,3 +107,70 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* ======================================================
+   Custom Range Slider Styling
+   ====================================================== */
+
+/* Base slider */
+.range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  /* two-layer background: gradient fill on the left, grey on the right */
+  background:
+    linear-gradient(90deg, #ff9e1a, #f97316) 0 0 / var(--pos) 100% no-repeat,
+    #e5e7eb 0 0 / calc(100% - var(--pos)) 100% no-repeat;
+  transition: background-size 0.3s ease;
+  cursor: pointer;
+}
+
+.range-slider:focus {
+  outline: none;
+}
+
+/* WebKit thumb */
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #f97316;
+  border-radius: 50%;
+  margin-top: -6px; /* centers thumb over 8px track: (20-8)/2 = 6px */
+  transition: transform 0.2s ease;
+}
+
+.range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.3);
+}
+
+/* Firefox track (unselected portion) */
+.range-slider::-moz-range-track {
+  background: #e5e7eb;
+  height: 8px;
+  border-radius: 4px;
+}
+
+/* Firefox progress (selected portion) */
+.range-slider::-moz-range-progress {
+  background: linear-gradient(90deg, #ff9e1a, #f97316);
+  height: 8px;
+  border-radius: 4px;
+}
+
+/* Firefox thumb */
+.range-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #f97316;
+  border-radius: 50%;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.range-slider::-moz-range-thumb:hover {
+  transform: scale(1.3);
+}
